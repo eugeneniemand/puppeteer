@@ -28,7 +28,7 @@ var diagramKeys = [];
 var expectedNumberOfExports = 0;
 var actualNumberOfExports = 0;
 
-const url = structurizrUrl + '/share/' + workspaceId + '/diagrams';
+const url = structurizrUrl + '/workspace/diagrams';
 
 const filenameSuffix = 'structurizr-' + workspaceId + '-';
 

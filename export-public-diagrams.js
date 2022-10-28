@@ -40,6 +40,7 @@ const filenameSuffix = 'structurizr-' + workspaceId + '-';
   await page.goto(url, { waitUntil: 'domcontentloaded' });
   await page.goto(url, { waitUntil: 'networkidle0' });
   await page.goto(url, { waitUntil: 'networkidle2' });
+  await page.waitForTimeout(10000);
   
   await page.waitForFunction('structurizr.scripting.isDiagramRendered() === true');
 

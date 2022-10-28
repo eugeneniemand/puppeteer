@@ -36,7 +36,11 @@ const filenameSuffix = 'structurizr-' + workspaceId + '-';
   browser = await puppeteer.launch({ignoreHTTPSErrors: false, headless: true});  
   const page = await browser.newPage();
 
+  await page.goto(url, { waitUntil: 'load' });
   await page.goto(url, { waitUntil: 'domcontentloaded' });
+  await page.goto(url, { waitUntil: 'networkidle0' });
+  await page.goto(url, { waitUntil: 'networkidle2' });
+  
   await page.waitForFunction('structurizr.scripting.isDiagramRendered() === true');
 
   await page.exposeFunction('savePNG', (content, filename) => {

@@ -74,7 +74,7 @@ const filenameSuffix = 'structurizr-';
     }, diagramKey);
 
     await page.waitForFunction('structurizr.scripting.isDiagramRendered() === true');
-    await page.waitForTimeout(2000);
+    
     if (format === "svg") {
       const diagramFilename = filenameSuffix + diagramKey + '.svg';
       const diagramKeyFilename = filenameSuffix + diagramKey + '-key.svg'
